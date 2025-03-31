@@ -2,7 +2,7 @@
 import {Rocket, Wand2, Sparkles, ArrowRight, MoveRight, Cloud, BookText, Eye, GitCommitHorizontal} from 'lucide-react';
 import {Card, CardContent, CardHeader, CardTitle} from '/src/components/ui/card.jsx';
 import {Button} from '/src/components/ui/button.jsx';
-import {NavLink} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import {motion} from 'framer-motion';
 import {useState} from 'react';
 
@@ -109,13 +109,13 @@ function LandingPage() {
                     </motion.p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <NavLink to="/weather">
-                            <Button size="lg" className="gap-2 group">
+                        <Link  to="/weather">
+                            <Button  size="lg" className="gap-2 group cursor-grab">
                                 <Cloud className="w-5 h-5"/>
                                 Weather as Metaphor
                                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform"/>
                             </Button>
-                        </NavLink>
+                        </Link>
                         <Button variant="outline" size="lg" className="gap-2">
                             <BookText className="w-5 h-5"/>
                             Philosophical Forecast
