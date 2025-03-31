@@ -31,30 +31,37 @@ function LandingPage() {
     return (
         <div className="min-h-screen bg-background text-foreground transition-colors overflow-hidden">
             {/* Animated background elements */}
-            <div className="fixed inset-0 -z-10 opacity-10">
-                {[...Array(10)].map((_, i) => (
-                    <motion.div
-                        key={i}
-                        className="absolute rounded-full bg-primary"
-                        initial={{
-                            x: Math.random() * window.innerWidth,
-                            y: Math.random() * window.innerHeight,
-                            width: Math.random() * 300 + 100,
-                            height: Math.random() * 300 + 100,
-                            opacity: 0.1
-                        }}
-                        animate={{
-                            x: [null, Math.random() * window.innerWidth],
-                            y: [null, Math.random() * window.innerHeight],
-                            transition: {
-                                duration: Math.random() * 30 + 20,
-                                repeat: Infinity,
-                                repeatType: "reverse"
-                            }
-                        }}
-                    />
-                ))}
+            <div className="">
+
+                <div className="fixed inset-0 -z-10 opacity-10">
+                    {[...Array(10)].map((_, i) => (
+                        <motion.div
+                            key={i}
+                            className="absolute rounded-full bg-primary"
+                            initial={{
+                                x: Math.random() * window.innerWidth,
+                                y: Math.random() * window.innerHeight,
+                                width: Math.random() * 300 + 100,
+                                height: Math.random() * 300 + 100,
+                                opacity: 0.1
+                            }}
+                            animate={{
+                                x: [null, Math.random() * window.innerWidth],
+                                y: [null, Math.random() * window.innerHeight],
+                                transition: {
+                                    duration: Math.random() * 30 + 20,
+                                    repeat: Infinity,
+                                    repeatType: "reverse"
+                                }
+                            }}
+                        />
+                    ))}
+                </div>
+
             </div>
+
+
+
 
             {/* Hero Section */}
             <section className="container mx-auto px-4 py-24 text-center relative">
@@ -64,6 +71,16 @@ function LandingPage() {
                     transition={{duration: 0.8}}
                     className="max-w-3xl mx-auto"
                 >
+
+                    <div>
+                        <motion.h2
+                            className="text-4xl md:text-5xl font-bold mb-6"
+                            onMouseEnter={() => setIsGlitching(true)}
+                            onMouseLeave={() => setIsGlitching(false)}
+                        >
+                            <span className={`text-primary ${isGlitching ? 'text-glitch' : ''}`}>Pouncert</span>
+                        </motion.h2>
+                    </div>
 
 
                     <motion.h2
