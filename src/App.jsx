@@ -2,14 +2,20 @@
 import {Rocket, Wand2, Sparkles, ArrowRight, MoveRight, Cloud, BookText, Eye, GitCommitHorizontal} from 'lucide-react';
 import {Card, CardContent, CardHeader, CardTitle} from '/src/components/ui/card.jsx';
 import {Button} from '/src/components/ui/button.jsx';
-import {Link, NavLink} from "react-router-dom";
+import {Link, NavLink, useNavigate} from "react-router-dom";
 import {motion} from 'framer-motion';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
+import dm from "@/images/dm.png"
+import student from "@/images/student.png"
+import plane from "@/images/plane.png"
+import coin from "@/images/coin.png"
+import hourglass from "@/images/hourglass.gif"
+
 
 function LandingPage() {
     const [hoveredCard, setHoveredCard] = useState(null);
     const [isGlitching, setIsGlitching] = useState(false);
-
+    const nav = useNavigate();
     // Philosophical quotes that change randomly
     const uncertainQuotes = [
         "The path appears only as you walk it",
@@ -61,8 +67,6 @@ function LandingPage() {
             </div>
 
 
-
-
             {/* Hero Section */}
             <section className="container mx-auto px-4 py-24 text-center relative">
                 <motion.div
@@ -72,13 +76,21 @@ function LandingPage() {
                     className="max-w-3xl mx-auto"
                 >
 
-                    <div>
+                    <div
+                        className="cursor-pointer relative"
+                        onClick={() => nav("/crypto_verse")}
+                    >
                         <motion.h2
                             className="text-4xl md:text-5xl font-bold mb-6"
                             onMouseEnter={() => setIsGlitching(true)}
                             onMouseLeave={() => setIsGlitching(false)}
                         >
                             <span className={`text-primary ${isGlitching ? 'text-glitch' : ''}`}>Pouncert</span>
+                            <span className={`text-primary ${isGlitching ? 'text-glitch' : ''}`}>CryptoCert</span>
+                            <div className="flex relative h-28">
+                                <img className="w-[30%] h-28" src={student} alt=""/>
+                                <PlaneAnimation />
+                            </div>
                         </motion.h2>
                     </div>
 
@@ -109,16 +121,18 @@ function LandingPage() {
                     </motion.p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link  to="/weather">
-                            <Button  size="lg" className="gap-2 group cursor-grab">
+                        <Link to="/weather">
+                            <Button size="lg" className="gap-2 group cursor-grab">
                                 <Cloud className="w-5 h-5"/>
                                 Weather as Metaphor
                                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform"/>
                             </Button>
                         </Link>
-                        <Button variant="outline" size="lg" className="gap-2">
+                        <Button
+                            onClick={() => nav("/data_analyst")}
+                            variant="outline" size="lg" className="gap-2">
                             <BookText className="w-5 h-5"/>
-                            Philosophical Forecast
+                            For Aishu
                         </Button>
                     </div>
                 </motion.div>
@@ -236,6 +250,43 @@ function LandingPage() {
         </div>
     )
 }
+
+// New component for plane animation
+const PlaneAnimation = () => {
+    const [rotation, setRotation] = useState(0);
+
+    // Create orbital path animation
+    return (
+        <motion.div
+            className="absolute w-full h-full top-0 left-0 pointer-events-none"
+            style={{
+                transformOrigin: "30% 50%", // Center the orbit around the word
+            }}
+        >
+            <motion.img
+                src={hourglass}
+                alt="Airplane"
+                className="w-10 h-8 absolute"
+                style={{
+                    rotate: rotation,
+                    transformOrigin: "right",
+                }}
+                animate={{
+                    x: [200, 220, 300, 220, 200],
+                    y: [40, 40, 30, 20, 40],
+                    rotate: [0, 0, 1, 1, 0],
+                    scale: [1, 2.1, 2, 2, 1],
+                }}
+                transition={{
+                    duration: 8,
+                    ease: "easeInOut",
+                    times: [0, 0.25, 0.5, 0.75, 1],
+                    repeat: Infinity,
+                }}
+            />
+        </motion.div>
+    );
+};
 
 const principles = [
     {

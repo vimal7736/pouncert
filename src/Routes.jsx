@@ -2,6 +2,8 @@ import {createBrowserRouter} from "react-router-dom";
 import App from "@/App.jsx";
 import Weather from "@/pages/Weather.jsx";
 import MaybeMachine from "@/pages/MaybeMachine.jsx";
+import Cryptoverse from "@/pages/Cryptoverse.jsx";
+import MinimalistDataAnalystRoadmap from "@/pages/MinimalistDataAnalystRoadmap.jsx";
 
 
 export const router = createBrowserRouter([
@@ -15,5 +17,12 @@ export const router = createBrowserRouter([
     },{
         path: "/may_be_machine",
         element:<MaybeMachine/>
+    },
+    {
+        path: "/crypto_verse",
+        element:<Cryptoverse/>
+    },{
+        path: "/data_analyst",
+        element:<MinimalistDataAnalystRoadmap/>
     },
 ])
