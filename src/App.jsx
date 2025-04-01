@@ -131,7 +131,7 @@ function LandingPage() {
                             onClick={() => nav("/FullStackJavaScriptRoadmap")}
                             variant="outline" size="lg" className="gap-2">
                             <BookText className="w-5 h-5"/>
-                            For Web Ddevoper (V)
+                            For Web Developer (V)
                         </Button>
                     </div>
                     <div className="flex flex-col sm:flex-row gap-4 p-6 justify-center">
@@ -149,8 +149,11 @@ function LandingPage() {
 
             {/* Core Principles */}
             <section className="container mx-auto px-4 py-16">
-                <div className="max-w-4xl mx-auto text-center mb-16">
+                <div
+                    onClick={() => nav("/PoemPage")}
+                    className="max-w-4xl mx-auto text-center mb-16">
                     <motion.p
+
                         className="text-lg text-muted-foreground italic"
                         initial={{opacity: 0}}
                         whileInView={{opacity: 1}}
@@ -275,7 +278,7 @@ const PlaneAnimation = () => {
             <motion.img
                 src={hourglass}
                 alt="Airplane"
-                className="w-10 h-8 absolute"
+                className="w-10 h-8 absolute rounded-full  shadow-md text-black  shadow-black border-black border-2"
                 style={{
                     rotate: rotation,
                     transformOrigin: "right",

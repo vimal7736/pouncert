@@ -8,7 +8,7 @@ const Cryptoverse = () => {
 
             </div>
             <div className="main" >
-
+              page under development
             </div>
             <div className="footer" >
 
