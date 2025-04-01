@@ -121,19 +121,28 @@ function LandingPage() {
                     </motion.p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link to="/weather">
-                            <Button size="lg" className="gap-2 group cursor-grab">
-                                <Cloud className="w-5 h-5"/>
-                                Weather as Metaphor
-                                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform"/>
-                            </Button>
-                        </Link>
+
                         <Button
                             onClick={() => nav("/data_analyst")}
                             variant="outline" size="lg" className="gap-2">
                             <BookText className="w-5 h-5"/>
-                            For Aishu
+                            For Data Analyst (A)
+                        </Button><Button
+                            onClick={() => nav("/FullStackJavaScriptRoadmap")}
+                            variant="outline" size="lg" className="gap-2">
+                            <BookText className="w-5 h-5"/>
+                            For Web Ddevoper (V)
                         </Button>
+                    </div>
+                    <div className="flex flex-col sm:flex-row gap-4 p-6 justify-center">
+
+                    <Link to="/weather">
+                        <Button size="lg" className="gap-2 group cursor-grab">
+                            <Cloud className="w-5 h-5"/>
+                            Weather as Metaphor
+                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform"/>
+                        </Button>
+                    </Link>
                     </div>
                 </motion.div>
             </section>

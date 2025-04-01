@@ -4,6 +4,7 @@ import Weather from "@/pages/Weather.jsx";
 import MaybeMachine from "@/pages/MaybeMachine.jsx";
 import Cryptoverse from "@/pages/Cryptoverse.jsx";
 import MinimalistDataAnalystRoadmap from "@/pages/MinimalistDataAnalystRoadmap.jsx";
+import FullStackJavaScriptRoadmap from "@/pages/FullStackJavaScriptRoadmap.jsx";
 
 
 export const router = createBrowserRouter([
@@ -21,8 +22,13 @@ export const router = createBrowserRouter([
     {
         path: "/crypto_verse",
         element:<Cryptoverse/>
-    },{
+    },
+    {
         path: "/data_analyst",
         element:<MinimalistDataAnalystRoadmap/>
+    },
+    {
+        path: "/FullStackJavaScriptRoadmap",
+        element:<FullStackJavaScriptRoadmap />
     },
 ])
