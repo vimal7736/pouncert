@@ -127,11 +127,18 @@ function LandingPage() {
                             variant="outline" size="lg" className="gap-2">
                             <BookText className="w-5 h-5"/>
                             For Data Analyst (A)
-                        </Button><Button
+                        </Button>
+                        <Button
                             onClick={() => nav("/FullStackJavaScriptRoadmap")}
                             variant="outline" size="lg" className="gap-2">
                             <BookText className="w-5 h-5"/>
                             For Web Developer (V)
+                        </Button>
+                        <Button
+                            onClick={() => nav("/TypingPractice")}
+                            variant="outline" size="lg" className="gap-2">
+                            <BookText className="w-5 h-5"/>
+                            Dev Practice here
                         </Button>
                     </div>
                     <div className="flex flex-col sm:flex-row gap-4 p-6 justify-center">

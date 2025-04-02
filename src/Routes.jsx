@@ -6,6 +6,11 @@ import Cryptoverse from "@/pages/Cryptoverse.jsx";
 import MinimalistDataAnalystRoadmap from "@/pages/MinimalistDataAnalystRoadmap.jsx";
 import FullStackJavaScriptRoadmap from "@/pages/FullStackJavaScriptRoadmap.jsx";
 import PoemPage from "@/pages/PoemPage.jsx";
+import TypingPractice from "@/pages/TypingPractice.jsx";
+import CryptoHope from "@/cryptoPage/CryptoHope.jsx";
+import Exchange from "@/cryptoPage/Exchange.jsx";
+import News from "@/cryptoPage/News.jsx";
+import CryptoDetails from "@/cryptoPage/CryptoDetails.jsx";
 
 
 export const router = createBrowserRouter([
@@ -31,8 +36,13 @@ export const router = createBrowserRouter([
     {
         path: "/FullStackJavaScriptRoadmap",
         element:<FullStackJavaScriptRoadmap />
-    },{
+    },
+    {
         path: "/PoemPage",
         element:<PoemPage />
+    },
+    {
+        path: "/TypingPractice",
+        element:<TypingPractice />
     },
 ])

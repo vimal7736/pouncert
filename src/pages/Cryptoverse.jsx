@@ -1,19 +1,13 @@
 import React from 'react'
-import {Layout , Typography , Space} from 'antd';
-
+import CryptoDashboard from '../components/crypto_component/CryptoDashboard'
+// import MarketStats from '../components/crypto_component/MarketStats'
 const Cryptoverse = () => {
-    return (
-        <div className="app" >
-            <div className="navbar" >
-
-            </div>
-            <div className="main" >
-              page under development
-            </div>
-            <div className="footer" >
-
-            </div>
-        </div>
-    )
+  return (
+    <div>
+      {/* <MarketStats /> */}
+      <CryptoDashboard />
+    </div>
+  )
 }
+
 export default Cryptoverse
